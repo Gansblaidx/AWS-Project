@@ -103,6 +103,6 @@ ansible-playbook -i inventory.ini EC2-Docker-install.yml
 ## 👨‍💻 Autor
 
 **Matheus Ximenes**  
-Transição de carreira para DevOps/SRE/Cloud Engineer  
+Transição de carreira para DevOps/SRE/Cloud Engineer
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheus-ximenes-511b13182/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Gansblaidx)
