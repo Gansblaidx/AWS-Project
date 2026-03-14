@@ -1,44 +1,49 @@
-Projeto DevOps — Infraestrutura na AWS
+# 🚀 Projeto DevOps — Infraestrutura na AWS
+
 Projeto prático com foco em infraestrutura na AWS, containerização e automação de configuração.
 
 ---
 
-📋 Projetos
-Projeto 1 — Container Nginx na AWS
-Deploy de uma aplicação containerizada com Docker, publicada na internet via AWS ECR + App Runner.
+## 📋 Projetos
 
-Tecnologias: Docker · Nginx · AWS ECR · AWS App Runner
+### Projeto 1 — Container Nginx na AWS
+Deploy de uma aplicação containerizada com Docker, publicada na internet via **AWS ECR + App Runner**.
 
-O que foi feito:
-Criação de uma imagem Docker com Nginx
-Push da imagem para o ECR (Elastic Container Registry)
-Deploy público via AWS App Runner com URL gerada automaticamente
+**Tecnologias:** Docker · Nginx · AWS ECR · AWS App Runner
 
----
-
-Projeto 2 — EC2 com SSH customizado + Docker via Ansible
-Criação de uma instância EC2 na AWS com acesso SSH configurado na porta 4444 (sem uso da porta 22) e instalação do Docker via Ansible Playbook.
-
-Tecnologias: AWS EC2 · Ansible · Docker · Amazon Linux 2023
-
-O que foi feito:
-Instância EC2 provisionada via AWS CLI
-Security Group configurado para bloquear porta 22 e liberar apenas porta 4444
-Docker instalado e validado via Ansible Playbook
+**O que foi feito:**
+- Criação de uma imagem Docker com Nginx
+- Push da imagem para o ECR (Elastic Container Registry)
+- Deploy público via AWS App Runner com URL gerada automaticamente
 
 ---
 
-🛠️  Tecnologias utilizadas
-!Docker
-!Nginx
-!Ansible
-!AWS
-!Linux
+### Projeto 2 — EC2 com SSH customizado + Docker via Ansible
+Criação de uma instância EC2 na AWS com acesso SSH configurado na porta **4444** (sem uso da porta 22) e instalação do Docker via Ansible Playbook.
+
+**Tecnologias:** AWS EC2 · Ansible · Docker · Amazon Linux
+
+**O que foi feito:**
+- Instância EC2 provisionada via AWS CLI
+- Security Group configurado para bloquear porta 22 e liberar apenas porta 4444
+- Docker instalado e validado via Ansible Playbook
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat&logo=nginx&logoColor=white)
+![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=flat&logo=ansible&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
 
 ---
 
 
-📁 Estrutura do repositório
+## 📁 Estrutura do repositório
+
+```
 AWSProject1/
 ├── Project1-container/
 │   └── app/
@@ -49,18 +54,22 @@ AWSProject1/
 │       ├── inventory.ini
 │       └── EC2-Docker-install.yml
 └── README.md
-
+```
 
 ---
 
-▶️  Como reproduzir
-Pré-requisitos
-Conta na AWS com usuário IAM configurado
-AWS CLI instalado e configurado (aws configure)
-Docker instalado
-Ansible instalado (pip install ansible)
+## ▶️ Como reproduzir
 
-Projeto 1 — Subir o container
+### Pré-requisitos
+- Conta na AWS com usuário IAM configurado
+- AWS CLI instalado e configurado (`aws configure`)
+- Docker instalado
+- Ansible instalado (`pip install ansible`)
+
+
+### Projeto 1 — Subir o container
+
+```bash
 # 1. Criar repositório no ECR
 aws ecr create-repository --repository-name my-app --region us-east-1
 
@@ -73,24 +82,27 @@ cd Project1-container/app
 docker build -t my-app .
 docker tag my-app:latest <ECR_URL>:latest
 docker push <ECR_URL>:latest
+```
 
-Projeto 2 — Rodar o Ansible
+### Projeto 2 — Rodar o Ansible
+
+```bash
 # Substituir o IP da EC2 no inventory.ini
-cd Project2-ec2/ansible
+cd Project2-EC2/ansible
 ansible-playbook -i inventory.ini EC2-Docker-install.yml
+```
 
+## 🔐 Segurança
+
+- Arquivos `.pem` e credenciais AWS **nunca são commitados** (protegidos pelo `.gitignore`)
+- Acesso SSH restrito à porta **4444** e limitado ao IP do administrador
+- Porta 22 **bloqueada** no Security Group
 
 ---
 
-🔐 Segurança
-Arquivos .pem e credenciais AWS nunca são commitados (protegidos pelo .gitignore)
-Acesso SSH restrito à porta 4444 e limitado ao IP do administrador
-Porta 22 bloqueada no Security Group
+## 👨‍💻 Autor
 
----
-
-👨‍💻 Autor
-Matheus Ximenes
-Transição de carreira para DevOps/SRE/Cloud Engineer
+**Matheus Ximenes**  
+Transição de carreira para DevOps/SRE/Cloud Engineer  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/matheus-ximenes-511b13182/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Gansblaidx)
