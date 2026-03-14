@@ -1,4 +1,4 @@
-# 🚀 Projeto DevOps — Infraestrutura na AWS
+## 🚀 Projeto DevOps — Infraestrutura na AWS
 
 Projeto prático com foco em infraestrutura na AWS, containerização e automação de configuração.
 
@@ -32,14 +32,12 @@ Criação de uma instância EC2 na AWS com acesso SSH configurado na porta **444
 
 ## 🛠️ Tecnologias utilizadas
 
--[Docker]
--[Nginx]
--[Ansible]
--[AWS]
--[Linux]
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat&logo=nginx&logoColor=white)![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=flat&logo=ansible&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
 
 ---
-
 
 ## 📁 Estrutura do repositório
 
@@ -101,5 +99,5 @@ ansible-playbook -i inventory.ini EC2-Docker-install.yml
 
 *Matheus Ximenes*  
 Transição de carreira para DevOps/SRE/Cloud Engineer  
-(https://linkedin.com/in/matheus-ximenes-511b13182/)
-(https://github.com/Gansblaidx)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheus-ximenes-511b13182/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Gansblaidx)
