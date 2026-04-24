@@ -1,36 +1,36 @@
-# 🚀 Projeto DevOps — Infraestrutura na AWS
+# 🚀 DevOps Project — AWS Infrastructure
 
-Projeto prático com foco em infraestrutura na AWS, containerização e automação de configuração.
-
----
-
-## 📋 Projetos
-
-### Projeto 1 — Container Nginx na AWS
-Deploy de uma aplicação containerizada com Docker, publicada na internet via **AWS ECR + App Runner**.
-
-**Tecnologias:** Docker · Nginx · AWS ECR · AWS App Runner
-
-**O que foi feito:**
-- Criação de uma imagem Docker com Nginx
-- Push da imagem para o ECR (Elastic Container Registry)
-- Deploy público via AWS App Runner com URL gerada automaticamente
+Hands-on project focused on AWS infrastructure, containerization, and configuration automation.
 
 ---
 
-### Projeto 2 — EC2 com SSH customizado + Docker via Ansible
-Criação de uma instância EC2 na AWS com acesso SSH configurado na porta **4444** (sem uso da porta 22) e instalação do Docker via Ansible Playbook.
+## 📋 Projects
 
-**Tecnologias:** AWS EC2 · Ansible · Docker · Amazon Linux
+### Project 1 — Nginx Container on AWS
+Deployment of a containerized application using Docker, published to the internet via **AWS ECR + App Runner**.
 
-**O que foi feito:**
-- Instância EC2 provisionada via AWS CLI
-- Security Group configurado para bloquear porta 22 e liberar apenas porta 4444
-- Docker instalado e validado via Ansible Playbook
+**Technologies:** Docker · Nginx · AWS ECR · AWS App Runner
+
+**Key Achievements:**
+- Created a Docker image with Nginx.
+- Pushed the image to ECR (Elastic Container Registry).
+- Public deployment via AWS App Runner with an automatically generated URL.
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+### Project 2 — EC2 with Custom SSH + Docker via Ansible
+Creation of an AWS EC2 instance with SSH access configured on port **4444** (disabling port 22) and Docker installation via Ansible Playbook.
+
+**Technologies:** AWS EC2 · Ansible · Docker · Amazon Linux
+
+**Key Achievements:**
+- EC2 instance provisioned via AWS CLI.
+- Security Group configured to block port 22 and allow only port 4444.
+- Docker installed and validated using an Ansible Playbook.
+
+---
+
+## 🛠️ Technologies Used
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat&logo=nginx&logoColor=white)
@@ -40,7 +40,7 @@ Criação de uma instância EC2 na AWS com acesso SSH configurado na porta **444
 
 ---
 
-## 📁 Estrutura do repositório
+## 📁 Repository Structure
 
 ```
 AWSProject1/
@@ -57,52 +57,52 @@ AWSProject1/
 
 ---
 
-## ▶️ Como reproduzir
+## ▶️ How to Reproduce
 
-**Pré-requisitos:**
-- Conta na AWS com usuário IAM configurado
-- AWS CLI instalado e configurado (`aws configure`)
-- Docker instalado
-- Ansible instalado (`pip install ansible`)
+**Prerequisites:**
+- AWS Account with an IAM user configured.
+- AWS CLI installed and configured (`aws configure`).
+- Docker installed.
+- Ansible installed (`pip install ansible`).
 
-### Projeto 1 — Subir o container
+### Project 1 — Deploying the Container
 
 ```bash
-# 1. Criar repositório no ECR
+# 1. Create ECR repository
 aws ecr create-repository --repository-name my-app --region us-east-1
 
-# 2. Autenticar Docker no ECR
+# 2. Authenticate Docker with ECR
 aws ecr get-login-password --region us-east-1 | \
   docker login --username AWS --password-stdin <ECR_URL>
 
-# 3. Build e push
+# 3. Build and push
 cd Project1-container/app
 docker build -t my-app .
 docker tag my-app:latest <ECR_URL>:latest
 docker push <ECR_URL>:latest
 ```
 
-### Projeto 2 — Rodar o Ansible
+### Project 2 — Running Ansible
 
 ```bash
-# Substituir o IP da EC2 no inventory.ini
+# Replace the EC2 IP in inventory.ini
 cd Project2-EC2/ansible
 ansible-playbook -i inventory.ini EC2-Docker-install.yml
 ```
 
 ---
 
-## 🔐 Segurança
+## 🔐 Security
 
-- Arquivos `.pem` e credenciais AWS **nunca são commitados** (protegidos pelo `.gitignore`)
-- Acesso SSH restrito à porta **4444** e limitado ao IP do administrador
-- Porta 22 **bloqueada** no Security Group
+- .pem files and AWS credentials are never committed (protected by .gitignore).
+- SSH access restricted to port *4444* and limited to the administrator's IP.
+- Port 22 **blocked** in the Security Group.
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
 **Matheus Ximenes**  
-Transição de carreira para DevOps/SRE/Cloud Engineer
+Career Transition to DevOps/SRE/Cloud Engineer
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheus-ximenes-511b13182/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Gansblaidx)
